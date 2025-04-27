@@ -1,0 +1,123 @@
+.advantages {
+  color: var(--color-white);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #0f0f0f;
+  display: flex;
+  justify-content: center;
+}
+
+.advantages_container {
+  width: 60%;
+  margin: 0;
+  position: relative;
+  padding: 30px 0;
+}
+
+.advantages_container::before,
+.advantages_container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 40px;
+  width: 2px;
+  background-color: gray;
+}
+
+.advantages_container::before {
+  left: 0;
+}
+
+.advantages_container::after {
+  right: 0;
+}
+
+.advantages_title {
+  font-family: var(--font-montserrat);
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  padding-left: 40px;
+  color: var(--color-white);
+  text-transform: uppercase;
+  /* letter-spacing: 1px; */
+}
+.advantages_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  padding: 0 40px;
+  justify-items: stretch;
+}
+
+.advantages_card {
+  border-radius: 12px;
+  padding: 5px 10px;
+  text-align: center;
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+
+.icon {
+  color: var(--color-green);
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.advantages_card_title {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+  color: var(--color-white);
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+  .advantages_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .advantages_title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .advantages_grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .icon {
+    font-size: 36px;
+  }
+
+  .advantages_card_title {
+    font-size: 14px;
+  }
+
+  .advantages_title {
+    font-size: 30px;
+    padding-left: 20px;
+  }
+
+  .advantages_container {
+    width: 85%;
+  }
+
+  .advantages_container::before,
+  .advantages_container::after {
+    display: none;
+  }
+}
