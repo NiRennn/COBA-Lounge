@@ -24,10 +24,11 @@ export default function Home() {
           <Carousel />
         </section>
 
-        <section id="contacts">
+
+      </main>
+      <section id="contacts">
           <Footer />
         </section>
-      </main>
     </div>
   );
 }

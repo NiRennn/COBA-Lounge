@@ -1,51 +1,71 @@
 .footer {
+  position: relative;
   width: 100%;
   height: 500px;
+  overflow: hidden;
+}
+
+.footer :global(.ymaps-2-1-79-map) {
+  height: 100% !important;
+}
+
+.infoOverlay {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: black;
+  padding: 30px;
+  border-radius: 12px;
   color: white;
-}
-
-.content {
-  display: flex;
-  height: 100%;
-}
-
-.info {
-  width: 50%;
-  padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 20px;
+  max-width: 300px;
+  z-index: 2;
 }
 
-.column p,
-.contact p {
-  margin: 0;
-  font-size: 16px;
-}
-
-.socials {
+.footer_socials {
   display: flex;
   gap: 16px;
   align-items: center;
 }
 
-.icon {
+.footer_icon {
   font-size: 24px;
   cursor: pointer;
   transition: transform 0.2s;
 }
 
-.icon:hover {
+.footer_icon:hover {
   transform: scale(1.1);
 }
 
-.contact .email {
+.footer_contact p {
+  margin: 0;
+  font-size: 16px;
   font-weight: bold;
-  font-size: 14px;
 }
 
-.map {
-  width: 50%;
-  height: 100%;
+/* 🔻 Адаптив под мобильные устройства */
+@media (max-width: 768px) {
+  .footer {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .infoOverlay {
+    position: static;
+    transform: none;
+    background-color: black;
+    width: 100%;
+    max-width: none;
+    padding: 20px;
+    border-radius: 0;
+  }
+
+  .footer :global(.ymaps-2-1-79-map) {
+    height: 400px !important;
+  }
 }

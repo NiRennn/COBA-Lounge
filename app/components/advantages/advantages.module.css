@@ -81,7 +81,25 @@
   color: var(--color-white);
 }
 
-/* Адаптивность */
+
+@media (max-width: 1200px) {
+  .advantages_container {
+    width: 80%;
+  }
+
+  .advantages_title {
+    font-size: 40px;
+    padding-left: 20px;
+  }
+
+  .advantages_grid {
+    gap: 30px;
+    padding: 0 20px;
+  }
+}
+
+
+
 @media (max-width: 900px) {
   .advantages_grid {
     grid-template-columns: repeat(2, 1fr);

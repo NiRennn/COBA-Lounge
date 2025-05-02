@@ -16,7 +16,7 @@ function Hero() {
             className={styles.hero_content_logo}
           /> 
           <div className={styles.hero_content_top_title_desc}>
-            <h1 className={styles.hero_content_top_title}>SOVA</h1>
+            <h1 className={styles.hero_content_top_title}>COBA</h1>
             <h2 className={styles.hero_content_top_desc}>LOUNGE</h2>
           </div>
         </div>
