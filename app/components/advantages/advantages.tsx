@@ -6,13 +6,14 @@ import { GiCeilingLight } from "react-icons/gi";
 import { BiSolidDrink } from "react-icons/bi";
 import { RiSofaLine } from "react-icons/ri";
 import { CiParking1 } from "react-icons/ci";
+import { GiMusicalNotes } from "react-icons/gi";
 
 const advantages = [
   {
     icon: <CiParking1 className={styles.icon} />,
     title: "Бесплатная парковка",
   },
-  {
+  { 
     icon: <IoLeafOutline className={styles.icon} />,
     title: "Большой выбор вкусов",
   },
@@ -31,6 +32,10 @@ const advantages = [
   {
     icon: <RiSofaLine className={styles.icon} />,
     title: "Комфортные зоны отдыха",
+  },
+  {
+    icon: <GiMusicalNotes className={styles.icon} />,
+    title: "Приятная музыка",
   },
 ];
 

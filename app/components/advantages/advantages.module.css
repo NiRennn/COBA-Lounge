@@ -113,27 +113,22 @@
 
 @media (max-width: 600px) {
   .advantages_grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-
   .icon {
     font-size: 36px;
   }
-
   .advantages_card_title {
     font-size: 14px;
   }
-
   .advantages_title {
     font-size: 30px;
     padding-left: 20px;
   }
-
   .advantages_container {
     width: 85%;
   }
-
   .advantages_container::before,
   .advantages_container::after {
     display: none;

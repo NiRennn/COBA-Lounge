@@ -34,7 +34,7 @@ function Header() {
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.show : ""}`}>
   <div className={styles.close} onClick={toggleMenu}>×</div>
   {sections.map((section) => (
-    <a key={section.label} href={section.href} onClick={() => setMenuOpen(false)}>
+    <a  key={section.label} href={section.href} onClick={() => setMenuOpen(false)}>
       {section.label}
     </a>
   ))}

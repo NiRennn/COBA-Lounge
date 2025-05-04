@@ -8,6 +8,7 @@ import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 function Footer() {
   return (
     <footer className={styles.footer}>
+      <div className={styles.footer_map}>
       <YMaps query={{ apikey: "6b1f2de0-7847-4b5a-b172-1727e4bd4aeb" }}>
         <Map
           defaultState={{
@@ -26,6 +27,8 @@ function Footer() {
           <Placemark geometry={[55.69176712522453, 37.588782353633405]} />
         </Map>
       </YMaps>
+      </div>
+
 
       <div className={styles.infoOverlay}>
         <div className={styles.footer_socials}>

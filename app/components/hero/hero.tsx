@@ -21,7 +21,6 @@ function Hero() {
           </div>
         </div>
         <div className={styles.hero_content_mid}>
-          <span>Открыты для вашего отдыха!</span>
           <button className={styles.hero_content_mid_button}>
             Бронирование столика
           </button>

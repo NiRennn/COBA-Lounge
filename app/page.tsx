@@ -1,10 +1,11 @@
-import About from "./components/about/about";
+// import About from "./components/about/about";
 import Advantages from "./components/advantages/advantages";
 import Header from "./components/header/header";
 import Carousel from "./components/carousel/carousel";
 import Hero from "./components/hero/hero";
 import styles from "./page.module.css";
 import Footer from "./components/footer/footer";
+import Reservation from "./components/reservation/reservation";
 
 export default function Home() {
   return (
@@ -23,12 +24,13 @@ export default function Home() {
         <section id="interior">
           <Carousel />
         </section>
-
-
+        <section id="reservation">
+          <Reservation />
+        </section>
       </main>
       <section id="contacts">
-          <Footer />
-        </section>
+        <Footer />
+      </section>
     </div>
   );
 }
