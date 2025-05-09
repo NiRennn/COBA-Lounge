@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
+
 import styles from "./reservation.module.css";
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,15 @@ import { CalendarIcon, Clock } from "lucide-react";
 
 const ADMIN_PHONE = "79194101212";
 
+// Тип данных формы
+interface ReservationFormData {
+  name: string;
+  phone: string;
+  date: string;
+  time: string;
+  guests: number;
+}
+
 function Reservation() {
   const {
     register,
@@ -23,12 +33,11 @@ function Reservation() {
     watch,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm<ReservationFormData>();
 
-  const onSubmit = (data) => {
-    // Форматируем дату в читаемый формат
+  const onSubmit: SubmitHandler<ReservationFormData> = (data) => {
     const formattedDate = format(new Date(data.date), "dd.MM.yyyy");
-    const formattedTime = data.time; // время уже в нужном формате
+    const formattedTime = data.time;
 
     const message = `Здравствуйте! Я хочу забронировать стол:\n\nИмя: ${data.name}\nТелефон: ${data.phone}\nГостей: ${data.guests}\nДата: ${formattedDate}\nВремя: ${formattedTime}`;
     const whatsappURL = `https://wa.me/${ADMIN_PHONE}?text=${encodeURIComponent(
@@ -52,12 +61,11 @@ function Reservation() {
     return times;
   };
 
-  const handleTimeSelect = (time) => {
+  const handleTimeSelect = (time: string) => {
     const selectedDate = new Date(watch("date"));
     const [hours, minutes] = time.split(":");
     selectedDate.setHours(parseInt(hours, 10), parseInt(minutes, 10), 0, 0);
 
-    // Сохраняем как ISO строку для корректной передачи
     setValue("time", time, {
       shouldValidate: true,
       shouldDirty: true,

@@ -27,10 +27,9 @@ function Carousel() {
   };
 
   const handlers = useSwipeable({
-    onSwipedLeft: nextSlide,   // свайп влево -> следующий слайд
-    onSwipedRight: prevSlide,  // свайп вправо -> предыдущий слайд
-    preventDefaultTouchmoveEvent: true,  // предотвращаем прокрутку страницы при свайпе
-    trackMouse: true,          // добавляем поддержку для мыши
+    onSwipedLeft: nextSlide,   
+    onSwipedRight: prevSlide,  
+    trackMouse: true,          
   });
 
   return (
