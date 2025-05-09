@@ -1,72 +1,142 @@
 .footer {
   width: 100%;
-  height: 500px;
-  display: flex;
-  flex-direction: row;
-  /* overflow: hidden; */
-}
-
-.footer :global(.ymaps-2-1-79-map) {
-  height: 100% !important;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
 }
 
 .footer_map {
-  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  position: relative;
+  z-index: 1;
+}
+
+.footer_map :global(.ymaps-2-1-79-map) {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .infoOverlay {
   background-color: black;
-  padding: 30px;
+  padding: 32px 42px;
   color: white;
+  width: 430px;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 2;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  font-family: 'Ubuntu Mono', monospace;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  z-index: 2;
-  width: 50%;
+  gap: 12px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 400;
+  font-family: var(--font-kosugi);
+  margin: 0;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: 3px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  color: white;
+  font-family: var(--font-kosugi);
+  letter-spacing: 3px;
+
+
+}
+
+.infoItem {
+  font-size: 16px;
+  color: #ddd;
+  font-family: var(--font-inter);
+}
+
+.phone {
+  color: var(--color-green);
+  font-weight: bold;
+  margin-top: 8px;
 }
 
 .footer_socials {
   display: flex;
   gap: 16px;
-  align-items: center;
+  margin-top: 20px;
+  justify-content: flex-start;
 }
 
 .footer_icon {
-  font-size: 24px;
+  font-size: 25px;
+  color: var(--color-green);
+  transition: transform 0.2s ease;
   cursor: pointer;
-  transition: transform 0.2s;
 }
 
 .footer_icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
+  color: var(--color-green);
 }
+
 
 .footer_contact p {
-  margin: 0;
-  font-size: 16px;
+  margin: 10px 0 0;
+  font-size: 14px;
   font-weight: bold;
+  color: #fff;
 }
 
-/* @media (max-width: 768px) {
+/* Адаптив */
+@media (max-width: 768px) {
   .footer {
     height: auto;
     display: flex;
     flex-direction: column;
   }
 
+  .footer_map {
+    position: static;
+    height: 300px;
+  }
+
+  .footer_map :global(.ymaps-2-1-79-map) {
+    height: 300px !important;
+  }
+
   .infoOverlay {
     position: static;
     transform: none;
-    background-color: black;
     width: 100%;
-    max-width: none;
-    padding: 20px;
     border-radius: 0;
+    background-color: black;
+    padding: 20px;
+    box-shadow: none;
+    align-items: center;
+    text-align: center;
   }
 
-  .footer :global(.ymaps-2-1-79-map) {
-    height: 400px !important;
+  .footer_socials {
+    justify-content: center;
   }
-} */
+}

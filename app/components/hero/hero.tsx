@@ -1,3 +1,6 @@
+'use client'
+
+
 import React from "react";
 import styles from "./hero.module.css";
 import Image from "next/image";
@@ -14,14 +17,22 @@ function Hero() {
             width={230}
             height={250}
             className={styles.hero_content_logo}
-          /> 
+          />
           <div className={styles.hero_content_top_title_desc}>
             <h1 className={styles.hero_content_top_title}>COBA</h1>
             <h2 className={styles.hero_content_top_desc}>LOUNGE</h2>
           </div>
         </div>
         <div className={styles.hero_content_mid}>
-          <button className={styles.hero_content_mid_button}>
+          <button
+            className={styles.hero_content_mid_button}
+            onClick={() => {
+              const reservationSection = document.getElementById("reservation");
+              if (reservationSection) {
+                reservationSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             Бронирование столика
           </button>
         </div>

@@ -111,12 +111,9 @@
   display: flex;
   justify-content: start;
   font-family: 'Inter', sans-serif;
-
-
 }
 
 .hero_content_bot_section {
-  /* border-left: 2px solid white; */
   height: 100%;
   padding: 10px 40px;
   display: flex;
@@ -164,11 +161,6 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
 }
-
-
-
-
-
 
 @media (max-width: 1200px) {
   .hero_content {
@@ -245,7 +237,6 @@
   .hero_content_bot {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
     margin-top: 40px;
   }
 
@@ -254,14 +245,8 @@
     text-align: center;
     border-left: none !important;
 
-    padding: 20px 0;
   }
 
-
-
-  /* .hero_content_bot_section {
-    border-top: none;
-  } */
 }
 
 @media (max-width:560px) {

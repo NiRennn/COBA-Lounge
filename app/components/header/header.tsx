@@ -12,7 +12,7 @@ const sections = [
   { label: "Меню", href: "#menu" },
   { label: "Контакты", href: "#contacts" },
 ];
-
+ 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 

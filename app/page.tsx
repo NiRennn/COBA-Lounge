@@ -12,23 +12,23 @@ export default function Home() {
     <div className={styles.home_layout}>
       <Header />
       <main className={styles.main}>
-        <section id="home">
+        <section id="home" className={styles.home_section}>
           <Hero />
         </section>
-        <section id="advantages">
+        <section id="advantages" className={styles.home_section}>
           <Advantages />
         </section>
-        {/* <section id="about">
+        {/* <section id="about" className={styles.home_section}>
           <About />
         </section> */}
-        <section id="interior">
+        <section id="interior" className={styles.home_section}>
           <Carousel />
         </section>
-        <section id="reservation">
+        <section id="reservation" className={styles.home_section}>
           <Reservation />
         </section>
       </main>
-      <section id="contacts">
+      <section id="contacts" className={styles.home_section}>
         <Footer />
       </section>
     </div>

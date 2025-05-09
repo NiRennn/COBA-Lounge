@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import styles from "./carousel.module.css";
 import Image from "next/image";
+import { useSwipeable } from "react-swipeable";
 
 const images = [
   "/carousel/photo-1.jpg",
@@ -25,8 +26,15 @@ function Carousel() {
     setIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
+  const handlers = useSwipeable({
+    onSwipedLeft: nextSlide,   // свайп влево -> следующий слайд
+    onSwipedRight: prevSlide,  // свайп вправо -> предыдущий слайд
+    preventDefaultTouchmoveEvent: true,  // предотвращаем прокрутку страницы при свайпе
+    trackMouse: true,          // добавляем поддержку для мыши
+  });
+
   return (
-    <section className={styles.carousel}>
+    <section className={styles.carousel} {...handlers}>
       <button onClick={prevSlide} className={`${styles.button} ${styles.left}`}>
         &#10094;
       </button>
