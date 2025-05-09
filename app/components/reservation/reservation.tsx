@@ -16,7 +16,6 @@ import { CalendarIcon, Clock } from "lucide-react";
 
 const ADMIN_PHONE = "79194101212";
 
-// Тип данных формы
 interface ReservationFormData {
   name: string;
   phone: string;

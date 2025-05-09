@@ -2,13 +2,21 @@
   padding: 100px 20px;
   display: flex;
   justify-content: center;
+    z-index: 1;
+
 }
 
 .reservation_content {
   max-width: 650px;
   width: 100%;
+    z-index: 2;
+
 }
 
+.calendarPopover {
+  z-index: 9999 !important;
+  position: absolute !important;
+}
 
 
 .date_button_wrapper {
